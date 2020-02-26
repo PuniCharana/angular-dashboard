@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
   appName = AppConstants.APP_NAME;
 
   @Output() toggleMenu = new EventEmitter();
+  @Input() isMinimized: boolean;
 
   constructor(private router: Router) { }
 

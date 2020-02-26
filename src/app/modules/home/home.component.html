@@ -1,4 +1,4 @@
-<app-header (toggleMenu)="toggleNavMenu()"></app-header>
+<app-header [isMinimized]="minimized" (toggleMenu)="toggleNavMenu()"></app-header>
 <app-side-nav [isMinimized]="minimized" [ngStyle]="{'width': navWidth+'px'}"></app-side-nav>
 <section id="main-content" class="p-4" [ngStyle]="{'margin-left': contentMargin+'px'}">
   <router-outlet></router-outlet>
