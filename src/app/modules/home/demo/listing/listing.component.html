@@ -1,1 +1,4 @@
-<p>listing works!</p>
+<div class="btn btn-info" (click)="navigateTo('create')">Create</div>
+<ul>
+  <li style="cursor: pointer;" *ngFor="let item of items; let i=index" (click)="navigateTo(i)">{{item}}</li>
+</ul>

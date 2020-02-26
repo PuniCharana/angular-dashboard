@@ -9,12 +9,12 @@ export const demoRoutes: Routes = [
     component: ListingComponent
   },
   {
-    path: ':id',
-    component: DetailComponent
-  },
-  {
     path: 'create',
     component: CreateComponent
+  },
+  {
+    path: ':id',
+    component: DetailComponent
   }
 ];
 

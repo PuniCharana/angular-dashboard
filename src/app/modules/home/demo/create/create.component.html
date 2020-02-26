@@ -1,1 +1,8 @@
-<p>create works!</p>
+<h4>Create Item</h4>
+<br>
+<form [formGroup]="itemForm">
+  <div class="form-group">
+    <input type="text" formControlName="item" class="form-control" placeholder="Item" id="item">
+  </div>
+  <button [disabled]="itemForm.invalid" type="button" (click)="addItem()" class="btn btn-info">Create Item</button>
+</form>
