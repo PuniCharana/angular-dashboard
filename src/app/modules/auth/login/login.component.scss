@@ -1,0 +1,18 @@
+#login {
+  background-image: url('../../../../assets/images/hotel.jpeg');
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+#login form {
+  width: 250px;
+  position: absolute;
+  bottom: 15%;
+  left: 10%;
+}

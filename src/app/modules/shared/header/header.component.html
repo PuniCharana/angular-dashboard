@@ -1,0 +1,22 @@
+<div class="navitems">
+  <a href="javascript:void(0)" (click)="toggleSideMenu()">
+    <fa-icon [icon]="faBars" size="lg"></fa-icon>
+    &nbsp;&nbsp;&nbsp;
+  </a>
+  <a class="d-md-none" href="javascript:void(0)" (click)="navigateTo('')">
+    <fa-icon [icon]="faSpider" size="lg"></fa-icon>
+  </a>
+  <a class="d-none d-md-block" href="javascript:void(0)" (click)="navigateTo('')">
+    <b>{{appName}}</b>
+  </a>
+  <span class="spacer"></span>
+  <input type="search" [ngStyle]="{'max-width': isMinimized ? '100%': '240px'}" placeholder="Search" (focus)="toggleSearchInput(true)" (focusout)="toggleSearchInput(false)" />
+  <a href="javascript:void(0)" (click)="navigateTo('setting')" *ngIf="!searchFocus">
+    &nbsp;&nbsp;&nbsp;
+    <fa-icon [icon]="faCog"></fa-icon>
+  </a>
+  <a href="javascript:void(0)" (click)="toggleSideMenu()" *ngIf="searchFocus">
+    &nbsp;&nbsp;&nbsp;
+    <fa-icon [icon]="faTimes" size="lg"></fa-icon>
+  </a>
+</div>
