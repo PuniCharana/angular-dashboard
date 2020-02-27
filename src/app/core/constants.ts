@@ -3,7 +3,7 @@ import { version, name } from '../../../package.json';
 export class AppConstants {
   static readonly APP_NAME = name;
   static readonly APP_VERSION = version;
-  static readonly API_URL = 'http://api.wittyvows.appstage.co/api/';
+  static readonly API_URL = 'http://domain.com/api';
   static readonly AUTH_TOKEN_KEY = 'AUTH_TOKEN_KEY';
   static readonly PHONE_PATTERN = /^[789]{1}[0-9]{9}$/;
   static readonly OTP_PATTERN = /^[0-9]{4}$/;

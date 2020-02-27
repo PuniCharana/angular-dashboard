@@ -2,11 +2,25 @@
   <div class="ml-1 border-0">
     <img class="rounded-circle" (click)="navigaetTo('profile')" [ngStyle]="{'width': isMinimized ? '25px': '100px'}"
       src="https://picsum.photos/200/200" alt="Profile Image">
-      <p *ngIf="!isMinimized" class="mt-1 pb-0"><b>Lorem Ipsum</b></p>
+    <p *ngIf="!isMinimized" class="mt-1 pb-0"><b>Lorem Ipsum</b></p>
   </div>
   <ul class="list-group">
-    <li class="list-group-item border-0 p-2" [ngClass]="{'text-center': isMinimized}" *ngFor="let item of navItems" (click)="navigaetTo(item.action)">
-      <fa-icon [icon]="item.icon"></fa-icon><span *ngIf="!isMinimized"> &nbsp;&nbsp;{{item.title}}</span>
-    </li>
+    <ng-container *ngFor="let item of navItems; let i=index;">
+      <li class="list-group-item border-0 p-2" [ngClass]="{'text-center': isMinimized}"
+        (click)="navigaetTo(item.action, i)">
+        <span class="d-flex">
+          <fa-icon [icon]="item.icon"></fa-icon><span *ngIf="!isMinimized"> &nbsp;&nbsp;{{item.title}}</span><span
+            class="spacer"></span>
+          <fa-icon *ngIf="item.children && !isMinimized" [icon]="item.expanded ? faAngleUp : faAngleDown"></fa-icon>
+        </span>
+      </li>
+      <ul class="list-group" *ngIf="item.expanded" [ngStyle]="{'margin-left': isMinimized ? '0px': '10px'}">
+        <li class="list-group-item border-0 p-2" [ngClass]="{'text-center': isMinimized}"
+          *ngFor="let childItem of item.children; let i=index;" (click)="navigaetTo(childItem.action)">
+          <fa-icon [icon]="childItem.icon"></fa-icon><span *ngIf="!isMinimized">
+            &nbsp;&nbsp;{{childItem.title}}</span><span class="spacer"></span>
+        </li>
+      </ul>
+    </ng-container>
   </ul>
 </div>
